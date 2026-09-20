@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-16T10:16:52.524Z",
+  "durationMs": 2642,
+  "completeOffers": 0,
+  "incompleteListings": 7,
+  "pricesReturned": 7,
+  "warnings": [
+    "A busca geral de anúncios não está disponível nesta conexão. Consultamos as publicações associadas aos produtos de catálogo.",
+    "Não foi possível listar anúncios de Apple iPhone 15 (128 GB) - Amarelo. Este catálogo não disponibilizou publicações.",
+    "Não foi possível listar anúncios de Apple iPhone 15 Plus (128 GB) - Rosa. Este catálogo não disponibilizou publicações.",
+    "Não foi possível listar anúncios de Apple iPhone 15 Plus (128 GB) - Verde. Este catálogo não disponibilizou publicações.",
+    "O Mercado Livre negou acesso aos detalhes ou ao preço de venda de anúncios (403). Os preços de listagem abaixo são apenas informativos; anúncios sem link oficial e preço validado ficam fora da comparação."
+  ],
+  "requestId": "05ad0632-cc09-47cd-8968-d5926462d2e0",
+  "cache": "miss"
+}

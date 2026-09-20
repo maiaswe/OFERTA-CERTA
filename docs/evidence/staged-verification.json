@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-09-17T15:58:44.752Z",
+  "deployment": "dpl_3t69xjUbpNFJ9duzH2mMMuySc6ct",
+  "status": 200,
+  "emptyStorefront": true,
+  "priceNotice": true,
+  "searchForm": true,
+  "rootRedirect": true,
+  "filteredSearch": true,
+  "privateStatus": 403,
+  "privateHostProtected": true,
+  "noAppError": true,
+  "storeChoices": true
+}

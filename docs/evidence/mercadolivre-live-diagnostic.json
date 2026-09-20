@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-09-15T21:48:03.515Z",
+  "samples": [
+    {
+      "resource": "/sites/MLB/search?q=iPhone%2015%20128%20GB&limit=3",
+      "status": 403,
+      "keys": [
+        "message",
+        "error",
+        "status",
+        "cause"
+      ],
+      "item": {
+        "status": 403
+      },
+      "error": "forbidden",
+      "message": "forbidden"
+    },
+    {
+      "resource": "/products/search?site_id=MLB&status=active&q=iPhone%2015%20128%20GB&limit=3",
+      "status": 200,
+      "keys": [
+        "keywords",
+        "paging",
+        "results",
+        "query_type"
+      ],
+      "item": {},
+      "results": [
+        {
+          "id": "MLB27172667",
+          "name": "Apple iPhone 15 (128 GB) - Azul",
+          "status": "active",
+          "catalog_product_id": "MLB27172667"
+        },
+        {
+          "id": "MLB27172677",
+          "name": "Apple iPhone 15 (128 GB) - Preto",
+          "status": "active",
+          "catalog_product_id": "MLB27172677"
+        },
+        {
+          "id": "MLB27172671",
+          "name": "Apple iPhone 15 (128 GB) - Verde",
+          "status": "active",
+          "catalog_product_id": "MLB27172671"
+        }
+      ],
+      "paging": {
+        "total": 10000,
+        "limit": 3,
+        "offset": 0,
+        "last": "MLB27172671"
+      }
+    },
+    {
+      "resource": "/products/MLB27172667",
+      "status": 200,
+      "keys": [
+        "id",
+        "catalog_product_id",
+        "status",
+        "pdp_types",
+        "domain_id",
+        "permalink",
+        "name",
+        "family_name",
+        "type",
+        "buy_box_winner",
+        "pickers",
+        "pictures",
+        "description_pictures",
+        "main_features",
+        "disclaimers",
+        "attributes",
+        "short_description",
+        "parent_id",
+        "children_ids",
+        "settings",
+        "quality_type",
+        "release_info",
+        "presale_info",
+        "enhanced_content",
+        "tags",
+        "date_created",
+        "authorized_stores",
+        "last_updated",
+        "grouper_id",
+        "experiments"
+      ],
+      "item": {
+        "id": "MLB27172667",
+        "name": "Apple iPhone 15 (128 GB) - Azul",
+        "permalink": "",
+        "status": "active",
+        "catalog_product_id": "MLB27172667",
+        "buy_box_winner": null
+      }
+    }
+  ]
+}

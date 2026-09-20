@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-09-16T10:15:14.214Z",
+  "checks": [
+    {
+      "label": "token_identity",
+      "sameConnectedUser": true,
+      "siteId": "MLB",
+      "accountStatus": "active",
+      "httpStatus": 200
+    },
+    {
+      "label": "application_grant",
+      "matchingGrant": true,
+      "scopes": [
+        "urn:ml:mktp:orders-shipments:/read-only",
+        "urn:global:admin:info:/read-only",
+        "urn:global:admin:oauth:/read-only",
+        "urn:global:admin:oauth:/read-write",
+        "urn:global:admin:users:/read-only",
+        "urn:ml:mktp:metrics:/read-only",
+        "urn:ml:mktp:offers:/read-only",
+        "urn:ml:all:comunication:/read-only",
+        "urn:ml:all:publish-sync:/read-only",
+        "urn:ml:mktp:ads:/read-only",
+        "urn:global:admin:info:/read-write",
+        "urn:ml:mktp:invoices:/read-only",
+        "urn:ml:mktp:comunication:/read-only",
+        "urn:ml:mktp:publish-sync:/read-only",
+        "offline_access",
+        "read",
+        "write"
+      ],
+      "httpStatus": 200
+    },
+    {
+      "label": "own_items_permission",
+      "total": 0,
+      "httpStatus": 200
+    },
+    {
+      "label": "new_bulk_endpoint",
+      "items": [
+        {
+          "id": "MLB6288254546",
+          "status": 403
+        },
+        {
+          "id": "MLB7514973182",
+          "status": 403
+        }
+      ],
+      "httpStatus": 200
+    },
+    {
+      "label": "catalog_permalink",
+      "id": "MLB27172667",
+      "permalink": "",
+      "buyBox": false,
+      "catalogStatus": "active",
+      "httpStatus": 200
+    }
+  ]
+}

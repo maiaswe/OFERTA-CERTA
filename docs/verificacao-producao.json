@@ -1,0 +1,17 @@
+{
+  "production": true,
+  "errors": [
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  ],
+  "badResponses": [],
+  "metrics": {
+    "ttfbMs": 19,
+    "domContentLoadedMs": 57,
+    "loadMs": 199,
+    "resourceBytes": 236960,
+    "thirdPartyResources": []
+  },
+  "manifestValid": true,
+  "offlineFallback": true,
+  "physicalDeviceInstallTested": false
+}

@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-09-16T10:19:25.552Z",
+  "deployment": "dpl_6axVUmMBwTDR6LybMZpKyMADD4Ve",
+  "results": [
+    {
+      "path": "/ofertas",
+      "status": 200
+    },
+    {
+      "path": "/api/affiliates",
+      "status": 401
+    }
+  ]
+}

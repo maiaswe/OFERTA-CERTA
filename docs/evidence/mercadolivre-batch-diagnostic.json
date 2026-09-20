@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-15T22:01:27.392Z",
+  "resource": "/items?ids=MLB6288254546",
+  "status": 200,
+  "results": [
+    {
+      "code": 403,
+      "id": "MLB6288254546",
+      "error": "access_denied",
+      "message": "Access to the requested resource is forbidden"
+    }
+  ]
+}

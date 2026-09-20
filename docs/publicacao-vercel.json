@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-09-15T17:02:28.307Z",
+  "origin": "https://oferta-certa-azure.vercel.app",
+  "storage": "cloud",
+  "ownerAccountExists": true,
+  "checks": [
+    {
+      "path": "/painel",
+      "status": 200
+    },
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/api/manage?action=status",
+      "status": 200
+    },
+    {
+      "path": "/api/manage?action=data",
+      "status": 401
+    },
+    {
+      "path": "/api/manage?action=export",
+      "status": 401
+    },
+    {
+      "path": "/api/integrations?action=status",
+      "status": 401
+    },
+    {
+      "path": "/api/auth/mercadolivre/connect",
+      "status": 401
+    },
+    {
+      "path": "/api/auth/mercadolivre/callback",
+      "status": 303
+    },
+    {
+      "path": "/api/manage?action=login",
+      "status": 403
+    },
+    {
+      "path": "/.env.local",
+      "status": 200,
+      "result": "not-found; arquivo privado não servido"
+    }
+  ]
+}

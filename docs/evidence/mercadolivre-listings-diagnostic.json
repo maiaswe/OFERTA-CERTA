@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-09-16T15:34:03.793Z",
+  "samples": [
+    {
+      "resource": "/products/MLB27172667/items?limit=3",
+      "status": 200,
+      "keys": [
+        "paging",
+        "results",
+        "experiments"
+      ],
+      "item": {},
+      "results": [
+        {
+          "item_id": "MLB7514973182",
+          "price": 4250,
+          "currency_id": "BRL"
+        },
+        {
+          "item_id": "MLB5232989377",
+          "price": 4699,
+          "currency_id": "BRL"
+        },
+        {
+          "item_id": "MLB4465577185",
+          "price": 4899,
+          "currency_id": "BRL"
+        }
+      ],
+      "paging": {
+        "total": 21,
+        "offset": 0,
+        "limit": 3
+      }
+    },
+    {
+      "resource": "/items/MLB7514973182",
+      "status": 403,
+      "keys": [
+        "message",
+        "error",
+        "status",
+        "cause"
+      ],
+      "item": {
+        "status": 403
+      },
+      "error": "access_denied",
+      "message": "Access to the requested resource is forbidden"
+    },
+    {
+      "resource": "/items/MLB7514973182/sale_price?context=channel_marketplace",
+      "status": 403,
+      "keys": [
+        "error",
+        "code",
+        "status"
+      ],
+      "item": {
+        "status": 403
+      },
+      "error": "Access to the requested resource is forbidden"
+    }
+  ]
+}

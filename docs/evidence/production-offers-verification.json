@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-09-16T10:07:03.197Z",
+  "deployment": "dpl_GSiSgCySnU97r5nsJ9q8ezhDdAmZ",
+  "origin": "https://oferta-certa-azure.vercel.app",
+  "checks": [
+    {
+      "path": "/ofertas",
+      "status": 200,
+      "publicEmpty": true
+    },
+    {
+      "path": "/painel/afiliados",
+      "status": 200
+    },
+    {
+      "path": "/api/affiliates",
+      "status": 401
+    },
+    {
+      "path": "/api/manage?action=data",
+      "status": 401
+    },
+    {
+      "path": "/api/integrations?action=search&q=iPhone%2015",
+      "status": 401
+    }
+  ]
+}

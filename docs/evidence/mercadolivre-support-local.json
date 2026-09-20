@@ -1,0 +1,193 @@
+{
+  "startedAt": "2026-09-16T22:12:25.648Z",
+  "completedAt": "2026-09-16T22:12:27.685Z",
+  "appId": "7046681029899344",
+  "siteId": "MLB",
+  "providerUserId": "3602341409",
+  "execution": {
+    "platform": "local",
+    "region": "não informada",
+    "deployment": null
+  },
+  "stoppedEarly": false,
+  "checks": [
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/users/me",
+      "requestedAt": "2026-09-16T22:12:25.734Z",
+      "completedAt": "2026-09-16T22:12:25.975Z",
+      "status": 200,
+      "requestId": "2205cbf5-cacc-4065-91e4-8d536f0ff317",
+      "summary": {
+        "userId": "3602341409",
+        "siteId": "MLB",
+        "accountStatus": "active",
+        "listAllowed": false,
+        "listCodes": [
+          "address_pending"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/applications/7046681029899344",
+      "requestedAt": "2026-09-16T22:12:25.975Z",
+      "completedAt": "2026-09-16T22:12:26.133Z",
+      "status": 200,
+      "requestId": "0c3edcd2-d09c-43b6-a889-05974f988ca7",
+      "summary": {
+        "id": 7046681029899344,
+        "active": true,
+        "sandboxMode": false,
+        "blocked": false,
+        "partialBlocked": false,
+        "disabled": false,
+        "certificationStatus": "not_certified"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/applications/7046681029899344/grants",
+      "requestedAt": "2026-09-16T22:12:26.133Z",
+      "completedAt": "2026-09-16T22:12:26.311Z",
+      "status": 200,
+      "requestId": "ba1bd75a-6615-4515-be9f-49875b6786da",
+      "summary": {
+        "matchingGrant": true,
+        "scopes": [
+          "urn:ml:mktp:orders-shipments:/read-only",
+          "urn:global:admin:info:/read-only",
+          "urn:global:admin:oauth:/read-only",
+          "urn:global:admin:oauth:/read-write",
+          "urn:global:admin:users:/read-only",
+          "urn:ml:mktp:metrics:/read-only",
+          "urn:ml:mktp:offers:/read-only",
+          "urn:ml:all:comunication:/read-only",
+          "urn:ml:all:publish-sync:/read-only",
+          "urn:ml:mktp:ads:/read-only",
+          "urn:global:admin:info:/read-write",
+          "urn:ml:mktp:invoices:/read-only",
+          "urn:ml:mktp:comunication:/read-only",
+          "urn:ml:mktp:publish-sync:/read-only",
+          "offline_access",
+          "read",
+          "write"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/products/search?site_id=MLB&status=active&q=iPhone%2015%20128%20GB&limit=3",
+      "requestedAt": "2026-09-16T22:12:26.311Z",
+      "completedAt": "2026-09-16T22:12:26.471Z",
+      "status": 200,
+      "requestId": "ef4d64c3-fb8d-4bc3-9037-f25232310386",
+      "summary": {
+        "productIds": [
+          "MLB27172667",
+          "MLB27172677",
+          "MLB27172671"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/products/MLB27172667/items?limit=3",
+      "requestedAt": "2026-09-16T22:12:26.471Z",
+      "completedAt": "2026-09-16T22:12:26.668Z",
+      "status": 200,
+      "requestId": "fc0204fd-4fe2-4396-9d76-136eda0c4ee0",
+      "summary": {
+        "listings": [
+          {
+            "itemId": "MLB7542586254",
+            "listingPrice": 4190,
+            "currency": "BRL"
+          },
+          {
+            "itemId": "MLB7514973182",
+            "listingPrice": 4250,
+            "currency": "BRL"
+          },
+          {
+            "itemId": "MLB3618961165",
+            "listingPrice": 4599.9,
+            "currency": "BRL"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/sites/MLB/search?q=iPhone%2015%20128%20GB&limit=3",
+      "requestedAt": "2026-09-16T22:12:26.668Z",
+      "completedAt": "2026-09-16T22:12:26.860Z",
+      "status": 403,
+      "requestId": "15667d74-c6bd-45a7-9b8b-b7008d07b006",
+      "errorBody": "{\"message\":\"forbidden\",\"error\":\"forbidden\",\"status\":403,\"cause\":[]}",
+      "bodyRedacted": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/items/MLB6288254546",
+      "requestedAt": "2026-09-16T22:12:26.860Z",
+      "completedAt": "2026-09-16T22:12:27.028Z",
+      "status": 403,
+      "requestId": "0d83aa47-8616-43ef-ba7a-481b6edd50d7",
+      "errorBody": "{\"message\":\"Access to the requested resource is forbidden\",\"error\":\"access_denied\",\"status\":403,\"cause\":null}",
+      "bodyRedacted": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/items/MLB6288254546/sale_price?context=channel_marketplace",
+      "requestedAt": "2026-09-16T22:12:27.028Z",
+      "completedAt": "2026-09-16T22:12:27.199Z",
+      "status": 403,
+      "requestId": "4f89efd5-f370-46a8-afe9-b41478ceabe1",
+      "errorBody": "{\"code\":\"access_denied\",\"error\":\"Access to the requested resource is forbidden\",\"status\":403}",
+      "bodyRedacted": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/items/MLB7514973182",
+      "requestedAt": "2026-09-16T22:12:27.199Z",
+      "completedAt": "2026-09-16T22:12:27.356Z",
+      "status": 403,
+      "requestId": "a667bc45-3630-4fbd-b05e-082cab79c212",
+      "errorBody": "{\"message\":\"Access to the requested resource is forbidden\",\"error\":\"access_denied\",\"status\":403,\"cause\":null}",
+      "bodyRedacted": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/items/MLB7514973182/sale_price?context=channel_marketplace",
+      "requestedAt": "2026-09-16T22:12:27.356Z",
+      "completedAt": "2026-09-16T22:12:27.520Z",
+      "status": 403,
+      "requestId": "506ce7fb-c671-4359-a454-c77ef784ac8c",
+      "errorBody": "{\"code\":\"access_denied\",\"error\":\"Access to the requested resource is forbidden\",\"status\":403}",
+      "bodyRedacted": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.mercadolibre.com/items/bulk?ids=MLB6288254546,MLB7514973182",
+      "requestedAt": "2026-09-16T22:12:27.520Z",
+      "completedAt": "2026-09-16T22:12:27.685Z",
+      "status": 200,
+      "requestId": "87d9b3b1-5c35-4271-8145-bfbbb089084f",
+      "summary": [
+        {
+          "id": "MLB6288254546",
+          "status": 403,
+          "errorBody": "{\"id\":\"MLB6288254546\",\"status_code\":403,\"error\":{\"message\":\"Access to the requested resource is forbidden\"}}",
+          "bodyRedacted": false
+        },
+        {
+          "id": "MLB7514973182",
+          "status": 403,
+          "errorBody": "{\"id\":\"MLB7514973182\",\"status_code\":403,\"error\":{\"message\":\"Access to the requested resource is forbidden\"}}",
+          "bodyRedacted": false
+        }
+      ]
+    }
+  ]
+}

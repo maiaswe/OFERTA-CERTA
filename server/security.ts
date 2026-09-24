@@ -19,14 +19,19 @@ export function appOrigin() {
 export function checkOrigin(request: Request) {
   const actualHost = request.headers.get("host") ?? new URL(request.url).host;
   const expected = new URL(appOrigin());
-  if (actualHost !== expected.host)
+  
+  // Allow Vercel preview deployments
+  const isVercelPreview = actualHost.endsWith(".vercel.app");
+  const isAllowedHost = actualHost === expected.host || isVercelPreview;
+  
+  if (!isAllowedHost)
     throw new AppError(403, "Endereço de acesso não autorizado.");
   const origin = request.headers.get("origin");
-  if (origin && origin !== expected.origin)
+  if (origin && origin !== expected.origin && !origin.endsWith(".vercel.app"))
     throw new AppError(403, "Origem não autorizada.");
-  if (!["GET", "HEAD"].includes(request.method) && origin !== expected.origin)
+  if (!["GET", "HEAD"].includes(request.method) && origin !== expected.origin && !origin?.endsWith(".vercel.app"))
     throw new AppError(403, "Recarregue o aplicativo antes de continuar.");
-  if (request.headers.get("sec-fetch-site") === "cross-site")
+  if (request.headers.get("sec-fetch-site") === "cross-site" && !isVercelPreview)
     throw new AppError(403, "Origem não autorizada.");
 }
 export async function passwordHash(password: string) {

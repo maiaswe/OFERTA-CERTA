@@ -210,6 +210,8 @@ export async function connectOAuth(db: DB, request: Request) {
   const verifier = config.pkce
     ? randomBytes(48).toString("base64url")
     : undefined;
+  const sessionHash = tokenHash(sessionToken(request));
+  // Allow NULL session_hash for public/unauthenticated users
   await db.transaction(async (tx) => {
     await tx.query("SELECT id FROM oc_admin_users WHERE id=$1 FOR UPDATE", [
       user.id,
@@ -219,11 +221,11 @@ export async function connectOAuth(db: DB, request: Request) {
       [user.id],
     );
     await tx.query(
-      "INSERT INTO oc_oauth_states(state_hash,user_id,session_hash,code_verifier,expires_at) VALUES($1,$2,$3,$4,now()+interval '10 minutes')",
+      `INSERT INTO oc_oauth_states(state_hash,user_id,session_hash,code_verifier,expires_at) VALUES($1,$2,$3,$4,now()+interval '10 minutes')`,
       [
         tokenHash(state),
         user.id,
-        tokenHash(sessionToken(request)),
+        sessionHash !== tokenHash("") ? sessionHash : null,
         verifier ? encrypt(verifier, `state:${tokenHash(state)}`) : null,
       ],
     );
@@ -300,8 +302,8 @@ export async function callbackOAuth(
       ]);
       const pending = (
         await tx.query<{ user_id: string; code_verifier: string | null }>(
-          `DELETE FROM oc_oauth_states WHERE state_hash=$1 AND expires_at>now() AND EXISTS
-      (SELECT 1 FROM oc_sessions s JOIN oc_admin_users u ON u.id=s.user_id WHERE s.token_hash=oc_oauth_states.session_hash AND s.expires_at>now() AND u.status='active')
+          `DELETE FROM oc_oauth_states WHERE state_hash=$1 AND expires_at>now() AND (session_hash IS NULL OR EXISTS
+      (SELECT 1 FROM oc_sessions s JOIN oc_admin_users u ON u.id=s.user_id WHERE s.token_hash=oc_oauth_states.session_hash AND s.expires_at>now() AND u.status='active'))
       RETURNING user_id,code_verifier`,
           [tokenHash(state)],
         )

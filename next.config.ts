@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+
 const config: NextConfig = {
   poweredByHeader: false,
   devIndicators: false,
@@ -11,5 +12,7 @@ const config: NextConfig = {
       "./db/certs/*.crt",
     ],
   },
+  turbopack: {},
 };
+
 export default config;

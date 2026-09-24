@@ -62,15 +62,16 @@ export async function handleAffiliates(request: Request, providedDb?: DB) {
       return reply({ ok: true });
     }
     const v = affiliateInput.parse(body);
+    // Gerar ID no banco para evitar conflito de UUID
+    const offerId = v.id ?? randomUUID();
     await db.transaction(async (tx) => {
       const row = (
         await tx.query(
           `INSERT INTO oc_affiliate_offers(id,user_id,store_id,title,variant,condition,product_url,affiliate_url,image_url,price,regular_price,shipping,status,verified_at,expires_at)
         VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,now(),now()+interval '24 hours')
-        ON CONFLICT(id) DO UPDATE SET store_id=excluded.store_id,title=excluded.title,variant=excluded.variant,condition=excluded.condition,product_url=excluded.product_url,affiliate_url=excluded.affiliate_url,image_url=excluded.image_url,price=excluded.price,regular_price=excluded.regular_price,shipping=excluded.shipping,status=excluded.status,verified_at=now(),expires_at=excluded.expires_at,updated_at=now()
-        WHERE oc_affiliate_offers.user_id=$2 RETURNING *`,
+        RETURNING *`,
           [
-            v.id,
+            offerId,
             user.id,
             v.storeId,
             v.title,
@@ -89,10 +90,10 @@ export async function handleAffiliates(request: Request, providedDb?: DB) {
       if (!row) throw new AppError(404, "Oferta não encontrada.");
       await tx.query(
         "INSERT INTO oc_affiliate_revisions(id,offer_id,snapshot) VALUES($1,$2,$3)",
-        [randomUUID(), v.id, JSON.stringify(row)],
+        [randomUUID(), offerId, JSON.stringify(row)],
       );
     });
-    return reply({ ok: true, id: v.id });
+    return reply({ ok: true, id: offerId });
   } catch (error) {
     return apiError(error);
   }

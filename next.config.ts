@@ -13,6 +13,8 @@ const config: NextConfig = {
     ],
   },
   turbopack: {},
+  // Use src/ directory for App Router (Next.js 13+)
+  srcDir: 'src',
 };
 
 export default config;
